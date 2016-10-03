@@ -47,3 +47,14 @@ that a (human) reader can understand them without having to read any supplementa
 documentation.
 
 -----
+
+if (s < t), where s and t are strings, means “If s comes before
+t in alphabetical order”. So it would be true if s had the value “Birkbeck” and t
+had the value “College”. All the upper-case letters come before the lower-case, so
+(s < t) would still be true if s had the value “Zebra” and t had the value “antelope”
+(upper-case ’Z’ comes before lower-case ’a’).
+
+- The space character comes before all the printable characters.
+- Numerals come in the order you’d expect, from ’0’ to ’9’.
+- Letters come in the order you’d expect, from ’A’ to ’Z’ and from ’a’ to ’z’.
+- Numerals come before upper-case letters and upper-case letters come before lowercase.

@@ -1,3 +1,11 @@
+Say for each of the following whether it is a valid identifier in Groovy and, if not, why
+not:
+
+BBC, Groovy, y2k, Y2K, old, new, 3GL, a.out,
+first-choice, 2nd_choice, third_choice
+
+-----
+
 # Valid
 BBC
 Groovy
