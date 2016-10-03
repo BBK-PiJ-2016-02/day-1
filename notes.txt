@@ -1,0 +1,49 @@
+String str = ""
+
+This is very like assignment since we are giving a value to str. But this is a special
+case where str did not have any defined value before, so it is known as initialisation.
+Finally a word about terminology. I have used the word “instruction” to refer to lines
+such as println str and str = 5 It seems a natural word to use since we are giving
+the computer instructions. But the correct word is actually “statement”. println str
+is an output statement, and str = "Hello" is an assignment statement. The lines in
+which we tell the computer about the variables we intend to use, such as String str or
+String str = "" are called variable definitions. They are also referred to as variable
+declarations
+
+-----
+
+Groovy, in common with other programming languages and with mathematical
+convention in general, gives precedence to *, / and % over + and -.
+
+-----
+
+The names that the programmer invents are called identifiers. The rules for forming
+identifiers are that the first character can be a letter (upper or lower case, usually the
+latter) and subsequent characters can be letters or digits or underscores. (Actually the
+first character can be an underscore but identifiers beginning with an underscore are
+17
+often used by system programs and are best avoided.) Other characters are not allowed.
+Groovy is case-sensitive, so Num, for example, is a different identifier from num.
+
+The only other restriction is that you cannot use any of the language’s keywords as an
+identifier. You couldn’t use int as the name of a variable, for example. There are many
+keywords but most of them are words that you are unlikely to choose. Ones that you
+might accidentally hit upon are break, case, catch, class, const, continue, double,
+final, finally, float, import, long, new, return, short, switch, this, throw and
+try. You should also avoid using words which, though not technically keywords, have
+special significance in the language, such as println and String.
+
+-----
+
+Programmers often use very short names for variables, such as i, n, or x for integers.
+There is no harm in this if the variable is used to do an obvious job, such as counting
+the number of times the program goes round a loop, and its purpose is immediately
+clear from the context. If, however, its function is not so obvious, it should be given
+a name that gives a clue as to the role it plays in the program. If a variable is
+holding the total of a series of integers and another is holding the largest of a series of
+integers, for example, then call them total and max rather than x and y.
+The aim in programming is to write programs that are “self-documenting”, meaning
+that a (human) reader can understand them without having to read any supplementary
+documentation.
+
+-----
