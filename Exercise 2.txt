@@ -1,0 +1,7 @@
+int i = 10
+while (i < 5) {
+	i++;
+	println i
+}
+
+// Loop will never run as initial value of i is above 5

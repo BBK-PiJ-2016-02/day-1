@@ -1,0 +1,15 @@
+String str = System.console().readLine()
+int i = Integer.parseInt(str)
+while (i < 10) {
+	i++;
+	String str = System.console().readLine()
+	int j = Integer.parseInt(str)
+	if (j == 0) {
+		break;
+	} else if (j != 1) {
+		println j;
+	}
+}
+System.out.println("finished");
+
+// If input value is between 0 and 10, it will print each value between the inputed value up to the value 10

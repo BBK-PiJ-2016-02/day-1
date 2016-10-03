@@ -1,0 +1,12 @@
+int currentYear = 2012
+print "When were you born (year)?"
+String str = System.console().readLine();
+int birthYear = Integer.parseInt(str);
+int ageAprox = currentYear - birthYear;
+String result = (ageAprox > 17) ? "" : "not "
+println "It seems you are " + result + "an adult."
+
+// Asks user for input
+// Parses user input as integer
+// Calculates an approximate age using value for year from variable and user input
+// Outputs text indicating whether or not your an adult if the approximate age is over 17
