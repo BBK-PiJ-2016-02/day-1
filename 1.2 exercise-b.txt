@@ -1,0 +1,14 @@
+# Valid
+BBC
+Groovy
+y2k
+Y2K
+old
+third_choice
+
+# Invalid
+new
+3GL
+a.out
+first-choice
+2nd_choice
