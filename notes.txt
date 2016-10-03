@@ -58,3 +58,11 @@ had the value “College”. All the upper-case letters come before the lower-case, 
 - Numerals come in the order you’d expect, from ’0’ to ’9’.
 - Letters come in the order you’d expect, from ’A’ to ’Z’ and from ’a’ to ’z’.
 - Numerals come before upper-case letters and upper-case letters come before lowercase.
+
+-----
+
+A note about the curly braces. The curly braces have the effect of grouping all the
+statements inside them into a programming unit called a block 
+
+-----
+
