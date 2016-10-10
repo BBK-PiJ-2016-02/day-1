@@ -3,7 +3,7 @@ int input = 0;
 boolean ascending = true;
 
 while(input != -1) {
-	if(lastNum >= input) {
+	if(input != lastNum+1) {
 		ascending = false;
 	}
 	lastNum = input;
