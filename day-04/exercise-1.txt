@@ -1,0 +1,4 @@
+- i is visible between the opening curly bracket on line 9 and the closing curly bracket on line 18
+- j is visible between the opening curly bracket on line 10 and the closing curly bracket on line 16
+- newSize is visible within the curly brackets of the setSize method (line 4-6)
+- size is visible within the curly brackets of the entire class (line 1-20)
