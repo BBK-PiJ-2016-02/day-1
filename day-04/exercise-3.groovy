@@ -27,13 +27,6 @@ String decimal2binary(int decimalNum) {
 	return binaryNum;
 }
 
-println('TEST CASES:');
-println('power(2,4) = ' + power(2,4));
-println('power2(3) = ' + power2(3));
-println('binary2decimal("1110") = ' + binary2decimal("1110"));
-println('decimal2binary(14) = ' + decimal2binary(14));
-println('');
-
 String userBinaryInput = System.console().readLine('Enter a binary number (e.g. 1011): ');
 println("Binary number " + userBinaryInput + " as a decimal = " + binary2decimal(userBinaryInput));
 println('');
