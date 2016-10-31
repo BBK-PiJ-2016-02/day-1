@@ -1,5 +1,5 @@
 public class ArrayChecker {
-	public boolean isSymetrical(int[] intArray) {
+	public boolean isSymmetrical(int[] intArray) {
 		int len = intArray.length;
 
 		for(int i = 0; i < len/2; i++) {

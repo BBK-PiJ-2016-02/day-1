@@ -1,10 +1,10 @@
 def String checkArray(int[] intArray) {
 	ArrayChecker checker = new ArrayChecker();
 
-	if(checker.isSymetrical(intArray)) {
-		return intArray.toString() + " -> isSymetrical(true)";
+	if(checker.isSymmetrical(intArray)) {
+		return intArray.toString() + " -> isSymmetrical(true)";
 	} else {
-		return intArray.toString() + " -> isSymetrical(false)" + ", reversed: " + checker.reverse(intArray).toString();
+		return intArray.toString() + " -> isSymmetrical(false)" + ", reversed: " + checker.reverse(intArray).toString();
 	}
 }
 
