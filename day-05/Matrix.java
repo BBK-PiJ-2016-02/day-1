@@ -26,20 +26,27 @@ public class Matrix {
 	}
 
 	public void setRow(int x, String values) {
-		String[] splitValues = values.split(",");
-		if(splitValues.length == this.size[1]) {
+		String[] rows = values.split(",");
+		if(rows.length == this.size[1]) {
 			for(int i = 0; i < this.size[1]; i++) {
-				this.setElement(x, i, Integer.parseInt(splitValues[i]));
+				this.setElement(x, i, Integer.parseInt(rows[i]));
 			}
 		}
 	}
 
 	public void setColumn(int y, String values) {
-		String[] splitValues = values.split(",");
-		if(splitValues.length == this.size[0]) {
+		String[] cols = values.split(",");
+		if(cols.length == this.size[0]) {
 			for(int j = 0; j < this.size[0]; j++) {
-				this.setElement(j, y, Integer.parseInt(splitValues[j]));
+				this.setElement(j, y, Integer.parseInt(cols[j]));
 			}
+		}
+	}
+
+	public void setMatrix(String values) {
+		String[] rows = values.split(";");
+		for(int j = 0; j < rows.length; j++) {
+			this.setRow(j, rows[j]);
 		}
 	}
 
