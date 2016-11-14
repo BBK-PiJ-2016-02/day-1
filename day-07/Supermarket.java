@@ -8,12 +8,12 @@ public class Supermarket {
     }
 
     public void open() {
-        queue = new SupermarketPersonQueue();
+        queue = new SupermarketQueue();
 
-        Person person1 = new Person("Alice");
+        Person person1 = new Person("Alice", 22);
         addPerson(person1);
 
-        Person person2 = new Person("John");
+        Person person2 = new Person("John", 66);
         addPerson(person2);
 
         servePerson();
