@@ -1,4 +1,4 @@
-public class SupermarketUnfairQueue implements PersonQueue {
+public class SupermarketUnfairSimpleQueue implements PersonQueue {
 
     private Person first;
 
