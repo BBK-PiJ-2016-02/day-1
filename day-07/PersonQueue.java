@@ -8,4 +8,9 @@ public interface PersonQueue {
     * Removes a person from the queue.
     */
     Person retrieve();
+
+    /**
+     * Get size of queue.
+     */
+    int getSize();
 }
