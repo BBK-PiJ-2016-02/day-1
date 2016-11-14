@@ -8,23 +8,30 @@ public class Supermarket {
     }
 
     public void open() {
-        queue = new SupermarketQueue();
+        queue = new SupermarketUnfairQueue();
 
-        Person person1 = new Person("Alice", 22);
-        addPerson(person1);
+        Person person = null;
+        addPerson(new Person("Alice", 22));
+        addPerson(new Person("John", 72));
+        addPerson(new Person("Julia", 22));
+        addPerson(new Person("Bill", 56));
+        addPerson(new Person("Jess", 34));
+        addPerson(new Person("Gloria", 82));
+        addPerson(new Person("Ted", 27));
 
-        Person person2 = new Person("John", 66);
-        addPerson(person2);
-
-        servePerson();
+        while(queue.getSize() > 0) {
+            servePerson();
+        }
     }
 
     public void addPerson(Person person) {
         queue.insert(person);
+        System.out.println("\"" + person.name + "(" + person.age + ")\" joined the queue. " + queue.getSize() + " person(s) in the queue.");
     }
 
     public void servePerson() {
-        Person nextPerson = queue.retrieve();
+        Person next = queue.retrieve();
+        System.out.println("Serving \"" + next.name + "(" + next.age + ")\". " + queue.getSize() + " person(s) in the queue.");
     }
 
 }

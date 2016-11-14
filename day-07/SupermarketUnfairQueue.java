@@ -1,4 +1,4 @@
-public class SupermarketQueue implements PersonQueue {
+public class SupermarketUnfairQueue implements PersonQueue {
 
     private Person first;
 
@@ -9,11 +9,23 @@ public class SupermarketQueue implements PersonQueue {
         if(first == null) {
             first = person;
         } else {
+
+            Person previous = null;
             Person current = first;
-            while(current.next != null) {
+
+            while(current != null && current.age > person.age) {
+                previous = current;
                 current = current.next;
             }
-            current.next = person;
+
+            person.next = current;
+            current = person;
+
+            if(previous == null) {
+                first = person;
+            } else {
+                previous.next = person;
+            }
         }
     }
 
