@@ -8,9 +8,10 @@ public class Supermarket {
     }
 
     public void open() {
-        queue = new SupermarketUnfairSimpleQueue();
+        queue = new SupermarketUnfairClusteredQueue();
 
         Person person = null;
+        addPerson(new Person("Johnny", 12));
         addPerson(new Person("Alice", 22));
         addPerson(new Person("John", 72));
         addPerson(new Person("Julia", 22));
