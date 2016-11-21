@@ -17,23 +17,7 @@ public class MobilePhone extends OldPhone {
      * @param number Which number to call
      */
     public void call(String number) {
-        int callHistoryCount = getCallHistoryCount();
-
-        if(callHistoryCount == numberHistoryLimit) {
-            // At call history limit, shift all numbers up a spot
-            for(int i = 0; i < callHistoryCount; i++) {
-                if(i > 0 && i < numberHistoryLimit) {
-                    numberHistory[i-1] = numberHistory[i];
-                }
-                if(i == callHistoryCount-1) {
-                    numberHistory[i] = null;
-                }
-            }
-            callHistoryCount--;
-        }
-
-        numberHistory[callHistoryCount] = number;
-
+        addNumberToCallHistory(number);
         super.call(number);
     }
 
@@ -51,6 +35,30 @@ public class MobilePhone extends OldPhone {
      */
     public void playGame(String gameName) {
         System.out.println("Launching game " + gameName + "...");
+    }
+
+    /**
+     * Add number to call history
+     * @param number number to add to call history
+     */
+    protected void addNumberToCallHistory(String number) {
+        int callHistoryCount = getCallHistoryCount();
+
+        if(callHistoryCount == numberHistoryLimit) {
+            // At call history limit, shift all numbers up a spot
+            for(int i = 0; i < callHistoryCount; i++) {
+                if(i > 0 && i < numberHistoryLimit) {
+                    numberHistory[i-1] = numberHistory[i];
+                }
+                if(i == callHistoryCount-1) {
+                    numberHistory[i] = null;
+                }
+            }
+            callHistoryCount--;
+        }
+
+        numberHistory[callHistoryCount] = number;
+
     }
 
     /**

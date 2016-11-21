@@ -3,6 +3,19 @@
 */
 public class SmartPhone extends MobilePhone {
     /**
+     * Call specified number
+     * @param number Which number to call
+     */
+    public void call(String number) {
+        if(number.startsWith("00")) {
+            addNumberToCallHistory(number);
+            System.out.println("Calling " + number + " through the internet to save money...");
+        } else {
+            super.call(number);
+        }
+    }
+
+    /**
      * Browse the internet
      * @param url Address to navigate to
      */
