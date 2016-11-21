@@ -3,6 +3,14 @@
 */
 public class SmartPhone extends MobilePhone {
     /**
+     * Class constructor
+     * @param  brand Brand name of phone
+     */
+    public SmartPhone(String brand) {
+        super(brand);
+    }
+
+    /**
      * Call specified number
      * @param number Which number to call
      */

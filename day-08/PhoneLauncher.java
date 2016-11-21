@@ -12,7 +12,12 @@ public class PhoneLauncher {
      * Create phone instances
      */
     public void launch() {
-        MobilePhone mobilePhone = new MobilePhone();
+        OldPhone oldPhone = new OldPhone("Motorola");
+        System.out.println("Brand: " + oldPhone.getBrand());
+        oldPhone.call("07000000000");
+
+        MobilePhone mobilePhone = new MobilePhone("Nokia");
+        System.out.println("Brand: " + mobilePhone.getBrand());
         mobilePhone.printLastNumbers();
         mobilePhone.call("07111111111");
         mobilePhone.call("07222222222");
@@ -30,7 +35,8 @@ public class PhoneLauncher {
         mobilePhone.ringAlarm("Siren");
         mobilePhone.playGame("Snake");
 
-        SmartPhone smartPhone = new SmartPhone();
+        SmartPhone smartPhone = new SmartPhone("Samsung");
+        System.out.println("Brand: " + smartPhone.getBrand());
         smartPhone.ringAlarm("BeepBeep");
         smartPhone.browseWeb("http://google.com/");
         System.out.println("Phone position: " + smartPhone.findPosition());

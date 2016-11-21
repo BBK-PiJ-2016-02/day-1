@@ -13,6 +13,14 @@ public class MobilePhone extends OldPhone {
     private String[] numberHistory = new String[numberHistoryLimit];
 
     /**
+     * Class constructor
+     * @param  brand Brand name of phone
+     */
+    public MobilePhone(String brand) {
+        super(brand);
+    }
+
+    /**
      * Call specified number
      * @param number Which number to call
      */
