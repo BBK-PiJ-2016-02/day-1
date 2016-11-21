@@ -1,0 +1,1 @@
+The Lecturer class extends the Teacher class, however as the Teacher class has implemented a constructor method the Lecturer class also needs to implement one with a matching signature, with the first line being a call to super().
