@@ -1,4 +1,4 @@
-class IntegerTreeNodeTest {
+public class IntegerTreeNodeTest {
     public static void main(String[] args) {
         IntegerTreeNode integerTreeNode1 = new IntegerTreeNode(4);
 
