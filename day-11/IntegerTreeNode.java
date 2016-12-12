@@ -56,6 +56,24 @@ class IntegerTreeNode {
         return left.getMin();
     }
 
+    public int getDepth() {
+        int depth = 0;
+
+        if(left != null || right != null) {
+            depth++;
+        }
+
+        if(left != null) {
+            depth += left.getDepth();
+        }
+
+        if(right != null) {
+            depth += right.getDepth();
+        }
+
+        return depth;
+    }
+
     public String toString() {
         String str = "[" + value + " L";
         if(left != null) {
