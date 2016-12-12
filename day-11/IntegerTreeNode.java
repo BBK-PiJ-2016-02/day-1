@@ -40,4 +40,19 @@ class IntegerTreeNode {
             }
         }
     }
+
+    public int getMax() {
+        if(right == null) {
+            return value;
+        }
+        return right.getMax();
+    }
+
+    public int getMin() {
+        if(left == null) {
+            return value;
+        }
+
+        return left.getMin();
+    }
 }
