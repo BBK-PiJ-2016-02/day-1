@@ -55,4 +55,22 @@ class IntegerTreeNode {
 
         return left.getMin();
     }
+
+    public String toString() {
+        String str = "[" + value + " L";
+        if(left != null) {
+            str += left.toString();
+        } else {
+            str += "[]";
+        }
+        str += " R";
+        if(right != null) {
+            str += right.toString();
+        } else {
+            str += "[]";
+        }
+        str += "]";
+
+        return str;
+    }
 }

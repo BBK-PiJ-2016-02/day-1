@@ -10,5 +10,6 @@ class IntegerTreeNodeTest {
         System.out.println("integerTreeNode1.contains(7): " + integerTreeNode1.contains(7));
         System.out.println("integerTreeNode1.getMax(): " + integerTreeNode1.getMax());
         System.out.println("integerTreeNode1.getMin(): " + integerTreeNode1.getMin());
+        System.out.println("integerTreeNode1.toString(): " + integerTreeNode1.toString());
     }
 }
