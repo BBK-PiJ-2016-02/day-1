@@ -41,6 +41,43 @@ class IntegerTreeNode {
         }
     }
 
+    // public boolean remove(int n) {
+    //     if(value == n) {
+    //         int leftDepth = -1;
+    //         int rightDepth = -1;
+
+    //         if(left != null) {
+    //             leftDepth = left.getDepth();
+    //         }
+
+    //         if(right != null) {
+    //             rightDepth = right.getDepth();
+    //         }
+
+    //         // Choose the shortest depth
+    //         if((leftDepth > -1) && (leftDepth < rightDepth)) {
+
+    //         } else if(rightDepth > -1)  {
+
+    //         } else {
+    //              // ISSUE: CAN'T REASSIGN AN INT AS NULL
+    //             value = null;
+    //         }
+
+    //         return true;
+    //     }
+
+    //     if(left.contains(n)) {
+    //         return left.remove(n);
+    //     }
+
+    //     if(right.contains(n)) {
+    //         return right.remove(n);
+    //     }
+
+    //     return false;
+    // }
+
     public int getMax() {
         if(right == null) {
             return value;
