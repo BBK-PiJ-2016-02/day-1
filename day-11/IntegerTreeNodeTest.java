@@ -12,5 +12,6 @@ public class IntegerTreeNodeTest {
         System.out.println("integerTreeNode1.getMin(): " + integerTreeNode1.getMin());
         System.out.println("integerTreeNode1.toString(): " + integerTreeNode1.toString());
         System.out.println("integerTreeNode1.getDepth(): " + integerTreeNode1.getDepth());
+        System.out.println("integerTreeNode1.containsVerbose(7): " + integerTreeNode1.containsVerbose(7));
     }
 }

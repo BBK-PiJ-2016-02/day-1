@@ -41,6 +41,29 @@ public class IntegerTreeNode {
         }
     }
 
+    public boolean containsVerbose(int n) {
+        System.out.println(
+            "Checking " + this.value + " == " + n +
+            ": " + (n == this.value)
+        );
+
+        if (n == this.value) {
+            return true;
+        } else if (n > this.value) {
+            if (right == null) {
+                return false;
+            } else {
+                return right.containsVerbose(n);
+            }
+        } else {
+            if (left == null) {
+                return false;
+            } else {
+                return left.containsVerbose(n);
+            }
+        }
+    }
+
     // public boolean remove(int n) {
     //     if(value == n) {
     //         int leftDepth = -1;
