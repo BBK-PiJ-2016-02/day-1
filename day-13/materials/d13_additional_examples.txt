@@ -1,0 +1,145 @@
+Dear students, 
+
+In order to help with the learning goals of this unit, a few examples of JUnit tests are provided below. These examples are based on some of the star-exercises for today, but you do not need any additional knowledge beyond that provided in the notes to understand them. 
+
+Note that when following the TDD methodology the tests are written before the implementing class, and we do not know anything about the class beyond what is described in the interface that outlines its behaviour. Therefore, the examples below do not inclide the actual implementation of the methods because you already know enough about member fields, member methods, parameters, and local variables. When solving the actual exercises, you will need follow the full cycle of interface -- compilation -- failing test -- passing test. 
+
+Note that, in the interest of clarity, the test methods below include some information that should not be there in a real situation, either because it should be abstracted away into a method annotated with @Before or even promoted to be a private-static-final field of the testing class. Remember: Don´t Repeat Yourself (DRY). 
+
+Hopefully these examples below will help in: 
+
+  - developing your reading code skills
+  - providing you with good exemplars when writing code that is simple, clear, and general. 
+
+Best regards, 
+
+
+
+
+
+Example 1: 
+
+Requirement: Add a method to your users that returns a list with the titles of all the books they are borrowing at the moment.
+
+// In file UserImplTest.java
+@Test
+public void userBorrowsThreeBooksReportsThreeBooks() {
+    User user = new UserImpl("John Smith"); // this should probably be in the @Before because DRY
+
+    Library library = new LibraryMock(); // implemented in 1.3
+    String title1 = "Hamlet";                  // should be final field because DRY
+    String title1 = "Midsummer´s Night Dream"; // should be final field because DRY
+    String title1 = "Henry VIII";              // shoudl be final field because DRY
+    user.register(library);
+    user.takeBook(title1);
+    user.takeBook(title2);
+    user.takeBook(title3);
+
+    List<Book> borrowedBookList = user.getBorrowedBooks();
+    assertEquals(3, borrowedBookList.size());
+    assertTrue(containsTitle(borrowedBookList, title1));
+    assertTrue(containsTitle(borrowedBookList, title2));
+    assertTrue(containsTitle(borrowedBookList, title3));
+}
+
+
+@Test
+public void userBorrowsThreeBooksReturnsTwoReportsOne() {
+    User user = new UserImpl("John Smith"); // this should probably be in the @Before because DRY
+
+    Library library = new LibraryMock(); // implemented in 1.3, contains Shakespeare´s
+    String title1 = "Hamlet";                  // should be final field because DRY
+    String title1 = "Midsummer´s Night Dream"; // should be final field because DRY
+    String title1 = "Henry VIII";              // shoudl be final field because DRY
+    user.register(library);
+    Book book1 = user.takeBook(title1);
+    user.takeBook(title2);
+    Book book3 = user.takeBook(title3);
+    user.return(book1);
+    user.return(book3);
+
+    List<Book> borrowedBookList = user.getBorrowedBooks();
+    assertEquals(1, borrowedBookList.size());
+    assertTrue(containsTitle(borrowedBookList, title2));
+}
+
+@Test
+public void userBorrowsUnexistingBook() {
+    User user = new UserImpl("John Smith"); // this should probably be in the @Before because DRY
+
+    Library library = new LibraryMock(); // implemented in 1.3, contains Shakespeare´s
+    String title  = "Don Quixote";
+    user.register(library);
+    user.takeBook(title);
+
+    List<Book> borrowedBookList = user.getBorrowedBooks();
+    assertEquals(0, borrowedBookList.size());
+}
+
+/*
+ * This is a convenience method to be used in the battery of tests. 
+ * Therefore, it is private and it is not marked with annotation @Test
+ * because it is not a test itself. 
+ */
+private boolean containsTitle(List<Book> bookList, String title) { 
+    if (title == null || bookList == null) {
+        return false;
+    }
+    for (Book book : bookList) {
+        if (title.equals(book.getTitle())) {
+            return true;
+        }
+    }
+    return false;
+}
+
+
+Example 2: 
+
+Expand your library class one more time with [a method] that return[s] the name of the person that is borrowing a specific given title at the moment; if nobody is borrowing the
+book, or the book does not exist in the library, you must return null (not an empty String).
+
+// In file LibraryImplTest.java
+@Test
+public void returnUserBorrowingBook() {
+    Library library = new Library(); // this should probably be in the @Before because DRY
+
+    String title1 = "Hamlet";                  // should be final field because DRY
+    String title1 = "Midsummer´s Night Dream"; // should be final field because DRY
+    String title1 = "Henry VIII";              // shoudl be final field because DRY
+
+    library.addBook(title1, "Shakespeare");
+    library.addBook(title2, "Shakespeare");
+    library.addBook(title3, "Shakespeare");
+
+    User john = new UserMock("John");
+    User mark = new UserMock("Mark");
+    john.register(library);
+    mark.register(library);
+
+    john.takeBook(title1);
+    john.takeBook(title2);
+    mark.takeBook(title3);
+
+    assertEquals(john.getName(), library.getUserFor(title1));
+    assertEquals(john.getName(), library.getUserFor(title2));
+    assertEquals(mark.getName(), library.getUserFor(title3));
+}
+
+@Test
+public void returnNullForNonExistingBook() {
+    Library library = new Library(); // this should probably be in the @Before because DRY
+
+    assertNull(library.getUserFor("Hamlet"));
+}
+
+@Test
+public void returnNullForNonBorrowedBook() {
+    Library library = new Library(); // this should probably be in the @Before because DRY
+
+    library.addBook("Hamlet", "Shakespeare");
+    assertNull(library.getUserFor("Hamlet"));
+}
+
+
+
