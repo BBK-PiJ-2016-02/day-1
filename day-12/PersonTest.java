@@ -11,4 +11,14 @@ public class PersonTest {
 
         assertEquals(output, expected);
     }
+
+    @Test
+    public void testsDoubleSpacedName() {
+        Person p = new Person();
+        String input = "Patrick  Stewart";
+        String output = p.getInitials(input);
+        String expected = "PS";
+
+        assertEquals(output, expected);
+    }
 }
