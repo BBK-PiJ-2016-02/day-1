@@ -1,7 +1,7 @@
 import java.util.*;
 
 public class Exercise3 {
-    private int size = 10;
+    private int size;
     private Scanner scanner;
 
     public static void main(String[] args) {
@@ -11,6 +11,8 @@ public class Exercise3 {
 
     public void launch() {
         this.scanner = new Scanner(System.in);
+        this.size = this.getIntInput("How many numbers would you like to enter?: ");
+
         List<Integer> list = new ArrayList<Integer>();
 
         while(list.size() < size) {
