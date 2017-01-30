@@ -1,0 +1,10 @@
+a. The doggyMethod method will result in a StackOverflow once a value below 0 is passed to it. There is a statment to capture this situation, but it happens after two futher recursive calls to the method are made.
+
+Also the doggyMethod returns a string, however we attempt to use it in an arithmetic operation by adding it together with the return of a nested call to the same method that we pass an int to.
+
+In closing, I have no idea what the purpose of this method is.
+
+b. Results of calling the mcCarthy91 method with the following integers:
+- mcCarthy91(50) => 95
+- mcCarthy91(73) => 96
+- mcCarthy91(95) => 96
