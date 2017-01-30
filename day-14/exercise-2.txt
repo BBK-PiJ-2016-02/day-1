@@ -1,0 +1,3 @@
+Technically the Memoized Fibonacci method shouldn't qualify as static, has it needs a field on the class to store the previously computed values.
+
+The maximum value we can compute using an Integer as the return value is 2,147,483,647 (2^31-1, see Integer::MAX_VALUE), while if we use a Long type it is 9,223,372,036,854,775,807 (2^63-1, see Long::MAX_VALUE). So the max Fibonacci number we can compute would be 1,836,311,903 (46th number) when using an Integer and 7540113804746346429 (92nd number) when using a Long.
