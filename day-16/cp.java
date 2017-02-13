@@ -31,6 +31,13 @@ public class cp {
                 String targetPath = target.getPath();
                 if (target.isDirectory()) targetPath += "/" + source.getName();
 
+                target = new File(targetPath);
+                if(target.exists()) {
+                    String userInput = System.console().readLine(target.getName() + ": Target exists, overwrite? (y/n): ");
+                    userInput = userInput.trim().toLowerCase();
+                    if(!userInput.equals("y") && !userInput.equals("yes")) continue;
+                }
+
                 Files.copy(source.toPath(), Paths.get(targetPath), REPLACE_EXISTING);
             } catch (IOException ex) {
                 ex.printStackTrace();
