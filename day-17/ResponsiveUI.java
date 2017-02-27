@@ -20,25 +20,24 @@ public class ResponsiveUI implements Runnable {
             List<String> completedTasks = new ArrayList<String>();
             Iterator it = threadList.entrySet().iterator();
 
-            System.out.println("threadList.size(): " + threadList.size());
-
             while(it.hasNext()) {
                 Map.Entry pair = (Map.Entry)it.next();
                 int taskId = (int) pair.getKey();
                 Thread thread = (Thread) pair.getValue();
 
-                System.out.println("it.hasNext() - taskId: " + taskId + ", thread.isAlive(): " + thread.isAlive());
                 if(!thread.isAlive()) {
                     completedTasks.add("" + taskId);
                 }
-                threadList.remove(taskId);
             }
 
             if(completedTasks.size() > 0) {
                 System.out.println(
                     "Finished tasks: " +
-                    String.join(",", completedTasks)
+                    String.join(", ", completedTasks)
                 );
+                for(String taskId : completedTasks) {
+                    threadList.remove(Integer.parseInt(taskId));
+                }
             }
 
             ResponsiveUI sleepTask = new ResponsiveUI(taskI, sleepTime);
