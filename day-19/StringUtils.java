@@ -16,6 +16,17 @@ public class StringUtils {
     public static void main(String[] args) {
         StringUtils obj = new StringUtils();
         obj.exercise1();
+        obj.exercise2();
+    }
+
+    public static Integer eChecker(String strA, String strB) {
+        if(strA.toLowerCase().charAt(0) == 'e') {
+            if(strB.toLowerCase().charAt(0) == 'e') {
+                return 0;
+            }
+            return -1;
+        }
+        return 1;
     }
 
     public void exercise1() {
@@ -43,5 +54,12 @@ public class StringUtils {
         System.out.println("# stringSortByFirstLetter:\n" + String.join(", ", stringSortByFirstLetter) + "\n");
         System.out.println("# stringSortByLetterEFirst:\n" + String.join(", ", stringSortByLetterEFirst) + "\n");
 
+    }
+
+    public void exercise2() {
+        String[] stringSortByLetterEFirstStatic = Arrays.copyOf(this.strings, this.strings.length);
+        Arrays.sort(stringSortByLetterEFirstStatic, StringUtils::eChecker);
+
+        System.out.println("# stringSortByLetterEFirstStatic:\n" + String.join(", ", stringSortByLetterEFirstStatic) + "\n");
     }
 }
