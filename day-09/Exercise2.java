@@ -21,6 +21,9 @@ public class Exercise2 {
         phone.findPosition();
 
         this.testPhone(phone);
+
+        MobilePhone backupPhone = new MobilePhone("Nokia");
+        this.testPhone(backupPhone);
     }
 
     public void testPhone(Phone phone) {
@@ -28,7 +31,19 @@ public class Exercise2 {
             2.3 The only methods we can call here is the `call` methods, is that
             is the only method featured in the Phone interface
          */
-
         phone.call("01234 567890");
     }
+
+    /*
+        2.4 & 2.5 We get an error (incompatible types): changing the signature
+        of the testPhone method to hint at SmartPhone, we lose the ability to
+        pass any of the previously inherited classes, however in return we get
+        the benefit of the additional methods available on SmartPhone.
+
+    public void testPhone(SmartPhone phone) {
+        phone.call("01234 567890");
+        phone.browseWeb("https://www.google.com/");
+        phone.findPosition();
+    }
+     */
 }
