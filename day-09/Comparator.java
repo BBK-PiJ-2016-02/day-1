@@ -1,10 +1,20 @@
 public class Comparator {
+    public static void main(String[] args) {
+        Comparator obj = new Comparator();
+        obj.run();
+    }
+
+    public void run() {
+        System.out.println(this.getMax(2,9));
+        System.out.println(this.getMax(2.0,9.0));
+        System.out.println(this.getMax("2","9"));
+    }
+
     public int getMax(int n, int m) {
-        if (n > m) {
-            return n;
-        } else {
-            return m;
-        }
+        return (int) this.getMax(
+            (double) n,
+            (double) m
+        );
     }
 
     public double getMax(double d1, double d2) {
@@ -16,12 +26,9 @@ public class Comparator {
     }
 
     public String getMax(String number1, String number2) {
-        int n1 = Integer.parseInt(number1);
-        int n2 = Integer.parseInt(number2);
-        if(n1 > n2) {
-            return number1;
-        } else {
-            return number2;
-        }
+        return "" + this.getMax(
+            Integer.parseInt(number1),
+            Integer.parseInt(number2)
+        );
     }
 }
