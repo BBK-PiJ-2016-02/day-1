@@ -19,5 +19,16 @@ public class Exercise2 {
         phone.call("01234 567890");
         phone.browseWeb("https://www.google.com/");
         phone.findPosition();
+
+        this.testPhone(phone);
+    }
+
+    public void testPhone(Phone phone) {
+        /*
+            2.3 The only methods we can call here is the `call` methods, is that
+            is the only method featured in the Phone interface
+         */
+
+        phone.call("01234 567890");
     }
 }
