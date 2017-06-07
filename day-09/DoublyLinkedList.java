@@ -1,3 +1,5 @@
+import java.lang.IndexOutOfBoundsException;
+
 public class DoublyLinkedList<E> {
     private Node start = null;
     private Node end = null;
@@ -11,6 +13,7 @@ public class DoublyLinkedList<E> {
             this.end = node;
         }
 
+        this.end.setNextNode(node);
         node.setPrevNode(this.end);
         node.setNextNode(this.start);
         this.end = node;
@@ -19,8 +22,15 @@ public class DoublyLinkedList<E> {
     }
 
     public E get(Integer index) {
-        // if
-        return this.start.getElement();
+        if (index < 0 || index > this.size) {
+            throw new IndexOutOfBoundsException();
+        }
+
+        Node node = this.start;
+        for(Integer i = 0; i < index; i++) {
+            node = node.getNextNode();
+        }
+        return node.getElement();
     }
 
     public Integer size() {
