@@ -18,6 +18,11 @@ public class DoublyLinkedList<E> {
         size++;
     }
 
+    public E get(Integer index) {
+        // if
+        return this.start.getElement();
+    }
+
     public Integer size() {
         return this.size;
     }
@@ -37,6 +42,10 @@ public class DoublyLinkedList<E> {
 
         public Node getNextNode() {
             return this.nextNode;
+        }
+
+        public E getElement() {
+            return this.element;
         }
 
         public void setPrevNode(Node node) {
